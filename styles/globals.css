@@ -29,4 +29,9 @@
         @apply absolute top-0 bottom-0 h-9 w-9 z-40 m-auto opacity-0 cursor-pointer transition
         hover:scale-125 group-hover:opacity-100;
     }
+
+    .modalButton {
+        @apply flex h-11 w-11 items-center justify-center rounded-full border-2 border-[gray] 
+        bg-neutral-800/60 transition hover:border-white hover:bg-white/10;
+    }
 }
