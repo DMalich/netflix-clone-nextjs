@@ -81,7 +81,8 @@ function Modal() {
                     />
                     <div className="absolute flex bottom-10 w-full items-center justify-between">
                         <div className="flex space-x-2">
-                            <button className="flex items-center rounded gap-x-2 bg-white 
+                            <button
+                                className="flex items-center rounded gap-x-2 bg-white 
                             text-black text-xl font-bold px-8 transition hover:bg-neutral-200"
                             >
                                 <FaPlay className="modalIcon text-black" />
@@ -96,7 +97,10 @@ function Modal() {
                                 <ThumbUpIcon className="modalIcon" />
                             </button>
                         </div>
-                        <button className="modalButton" onClick={() => setMuted(!muted)}>
+                        <button
+                            className="modalButton"
+                            onClick={() => setMuted(!muted)}
+                        >
                             {muted ? (
                                 <VolumeOffIcon className="modalIcon" />
                             ) : (
@@ -106,14 +110,38 @@ function Modal() {
                     </div>
                 </div>
 
-                <div>
-                    <div>
+                <div className="flex space-x-12 rounded-b-md px-10 py-8 bg-neutral-900">
+                    <div className="space-y-5 text-lg">
                         <div className="flex items-center space-x-2 text-sm">
-                            <p>{movie!.vote_average * 10}% Match</p>
-                            <p>{movie?.release_date || movie?.first_air_date}</p>
-                            <div className="flex items-center justify-center h-4 rounded border
-                            border-white/50 text-xs px-1.5">
+                            <p className="font-semibold text-green-600">
+                                {movie!.vote_average * 10}% Match
+                            </p>
+                            <p className="font-light">
+                                {movie?.release_date?.substring(0, 4) || movie?.first_air_date.substring(0, 4)}
+                            </p>
+                            <div
+                                className="flex items-center justify-center h-4 rounded border
+                            border-white/50 text-xs px-1.5"
+                            >
                                 HD
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-x-10 gap-y-4 font-light md:flex-row">
+                            <p className="w-5/6">{movie?.overview}</p>
+                            <div className="flex flex-col space-y-3 text-sm">
+                                <div>
+                                    <span className="text-neutral-500">Genres:</span>
+                                    {genres.map((genre) => genre.name).join(', ')}
+                                </div>
+                                <div>
+                                    <span className="text-neutral-500">Rating: </span>
+                                    {movie?.vote_average}
+                                </div>
+                                <div>
+                                    <span className="text-neutral-500">Original language: </span>
+                                    {movie?.original_language}
+                                </div>
                             </div>
                         </div>
                     </div>
