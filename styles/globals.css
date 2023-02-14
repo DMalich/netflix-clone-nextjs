@@ -34,4 +34,8 @@
         @apply flex h-11 w-11 items-center justify-center rounded-full border-2 border-[gray] 
         bg-neutral-800/60 transition hover:border-white hover:bg-white/10;
     }
+
+    .modalIcon {
+        @apply h-7 w-7;
+    }
 }

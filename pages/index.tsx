@@ -55,7 +55,7 @@ const Home = ({
                     <Row title="Action Thrillers" movies={actionMovies} />
                     <Row title="Comedies" movies={comedyMovies} />
                     <Row title="Scary Movies" movies={horrorMovies} />
-                    <Row title="Romance Movies" movies={romanceMovies} />
+                    {/* <Row title="Romance Movies" movies={romanceMovies} /> */}
                     <Row title="Documentaries" movies={documentaries} />
                 </section>{" "}
                 {showModal && <Modal />}
